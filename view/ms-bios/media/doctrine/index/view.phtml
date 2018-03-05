@@ -7,5 +7,7 @@
 namespace MSbios\Media\Doctrine;
 ?>
 
-<h1>Show Item Media</h1>
+<h1><?= $this->item->getTitle(); ?></h1>
+
+<?= $this->item->getContent(); ?>
 

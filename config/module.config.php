@@ -7,7 +7,6 @@ namespace MSBios\Media\Doctrine;
 
 use Zend\Router\Http\Regex;
 use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
 
@@ -53,25 +52,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class =>
-                InvokableFactory::class,
+                Factory\IndexControllerFactory::class,
         ]
     ],
-
-    'controllers' => [
-        'factories' => [
-
-        ],
-        'aliases' => [
-        ]
-    ],
-
-    'service_manager' => [
-        'factories' => [
-
-        ],
-        'aliases' => [
-
-        ]
-    ]
-
 ];

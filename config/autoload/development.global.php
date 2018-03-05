@@ -25,16 +25,9 @@ return [
     ],
 
     'controllers' => [
-        'factories' => [
-            Controller\IndexController::class =>
-                InvokableFactory::class,
-        ],
         'aliases' => [
             \MSBios\Application\Controller\IndexController::class =>
                 Controller\IndexController::class
-        ],
-        'initializers' => [
-            new AuthenticationServiceInitializer
         ]
     ],
 

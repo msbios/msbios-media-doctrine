@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e667a33d13bfa7feb019933f496b6eb",
-    "packages": [],
+    "content-hash": "3a98625731f49d0ede6b2cea38ef4446",
+    "packages": [
+        {
+            "name": "msbios/media-resource-doctrine",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/msbios/msbios-media-resource-doctrine.git",
+                "reference": "e58bc85e67b5c6971c04481021497e99887f5b8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/e58bc85e67b5c6971c04481021497e99887f5b8c",
+                "reference": "e58bc85e67b5c6971c04481021497e99887f5b8c",
+                "shasum": ""
+            },
+            "require-dev": {
+                "msbios/authentication": "^1.0",
+                "msbios/debug": "^1.0",
+                "msbios/guard": "^1.0",
+                "msbios/guard-resource": "^1.0",
+                "msbios/guard-resource-doctrine": "^1.0",
+                "msbios/resource": "^1.0",
+                "msbios/resource-doctrine": "^1.0",
+                "msbios/test": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "component": "MSBios\\Media\\Resource\\Doctrine"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MSBios\\Media\\Resource\\Doctrine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Judzhin Miles",
+                    "email": "info@msbios.com"
+                }
+            ],
+            "description": "MSBios Media Resource Doctrine",
+            "homepage": "https://github.com/msbios/msbios-media-resource-doctrine",
+            "keywords": [
+                "php"
+            ],
+            "time": "2018-03-05T16:29:26+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "behat/transliterator",
@@ -2869,16 +2922,16 @@
         },
         {
             "name": "msbios/resource-doctrine",
-            "version": "v1.0.14",
+            "version": "v1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-resource-doctrine.git",
-                "reference": "5966980708afd71411a3c8f6e2e79a743f4a736b"
+                "reference": "405637f2363e0a1256117cdc2105e7df97f1ca32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/5966980708afd71411a3c8f6e2e79a743f4a736b",
-                "reference": "5966980708afd71411a3c8f6e2e79a743f4a736b",
+                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/405637f2363e0a1256117cdc2105e7df97f1ca32",
+                "reference": "405637f2363e0a1256117cdc2105e7df97f1ca32",
                 "shasum": ""
             },
             "require": {
@@ -2918,7 +2971,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-01-26T20:56:18+00:00"
+            "time": "2018-03-05T16:18:25+00:00"
         },
         {
             "name": "msbios/stdlib",
