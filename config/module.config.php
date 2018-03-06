@@ -55,7 +55,7 @@ return [
                     ],
                     'constraints' => [
                         'id' => '[0-9]+',
-                        'format' => '(json|xml)?',
+                        'format' => '(json)?',
                     ]
                 ],
             ],
