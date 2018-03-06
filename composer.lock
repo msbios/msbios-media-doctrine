@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "msbios/media-resource-doctrine",
-            "version": "v1.0.4",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-media-resource-doctrine.git",
-                "reference": "e58bc85e67b5c6971c04481021497e99887f5b8c"
+                "reference": "9443544b0da62016e71d1c2a4ab6bdfacf22bc2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/e58bc85e67b5c6971c04481021497e99887f5b8c",
-                "reference": "e58bc85e67b5c6971c04481021497e99887f5b8c",
+                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/9443544b0da62016e71d1c2a4ab6bdfacf22bc2d",
+                "reference": "9443544b0da62016e71d1c2a4ab6bdfacf22bc2d",
                 "shasum": ""
             },
             "require-dev": {
@@ -56,7 +56,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-05T16:29:26+00:00"
+            "time": "2018-03-06T09:32:44+00:00"
         }
     ],
     "packages-dev": [
@@ -2922,16 +2922,16 @@
         },
         {
             "name": "msbios/resource-doctrine",
-            "version": "v1.0.18",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-resource-doctrine.git",
-                "reference": "405637f2363e0a1256117cdc2105e7df97f1ca32"
+                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/405637f2363e0a1256117cdc2105e7df97f1ca32",
-                "reference": "405637f2363e0a1256117cdc2105e7df97f1ca32",
+                "url": "https://api.github.com/repos/msbios/msbios-resource-doctrine/zipball/f66d2b20eabf57482605e6eae54b439da24fc4e6",
+                "reference": "f66d2b20eabf57482605e6eae54b439da24fc4e6",
                 "shasum": ""
             },
             "require": {
@@ -2971,7 +2971,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-05T16:18:25+00:00"
+            "time": "2018-03-06T08:36:37+00:00"
         },
         {
             "name": "msbios/stdlib",
@@ -4699,7 +4699,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -4768,7 +4768,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -4883,7 +4883,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -4932,7 +4932,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

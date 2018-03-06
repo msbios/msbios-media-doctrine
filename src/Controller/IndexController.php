@@ -48,8 +48,8 @@ class IndexController extends DefaultIndexController
     public function indexAction()
     {
         /** @var Paginator $paginator */
-        $paginator = $this->getRepository()->getPaginator(
-            $this->params()->fromQuery('page'), 3
+        $paginator = $this->getRepository()->getPaginatorFromQuery(
+            $this->params()->fromQuery(), $this->params()->fromQuery('page', 1), 3
         );
 
         /** @var ModelInterface $viewModel */

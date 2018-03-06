@@ -3,6 +3,7 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Media\Doctrine;
 
 use Zend\Router\Http\Regex;
@@ -19,7 +20,7 @@ return [
                     'media' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route' => 'media[/]',
+                            'route' => 'news[/]',
                             'defaults' => [
                                 'controller' => Controller\IndexController::class,
                                 'action' => 'index'
@@ -43,7 +44,19 @@ return [
                             ],
                         ]
                     ],
-
+                ],
+            ],
+            'media.rest.news' => [
+                'type' => Segment::class,
+                'options' => [
+                    'route' => '/api/news[/:id][.:format]',
+                    'defaults' => [
+                        'controller' => V1\Rest\News\NewsResource::class,
+                    ],
+                    'constraints' => [
+                        'id' => '[0-9]+',
+                        'format' => '(json|xml)?',
+                    ]
                 ],
             ],
         ],
@@ -53,6 +66,14 @@ return [
         'factories' => [
             Controller\IndexController::class =>
                 Factory\IndexControllerFactory::class,
+            V1\Rest\News\NewsResource::class =>
+                Factory\NewsResourceFactory::class
         ]
+    ],
+
+    'view_manager' => [
+        'strategies' => [
+            'ViewJsonStrategy',
+        ],
     ],
 ];
