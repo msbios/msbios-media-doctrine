@@ -6,7 +6,6 @@
 
 namespace MSBios\Media\Doctrine;
 
-use MSBios\Authentication\Initializer\AuthenticationServiceInitializer;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -25,6 +24,10 @@ return [
     ],
 
     'controllers' => [
+        'factories' => [
+            Controller\IndexController::class =>
+                InvokableFactory::class,
+        ],
         'aliases' => [
             \MSBios\Application\Controller\IndexController::class =>
                 Controller\IndexController::class

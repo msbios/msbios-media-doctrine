@@ -22,59 +22,33 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends DefaultIndexController
 {
-    use ObjectManagerAwareTrait;
+//    use ObjectManagerAwareTrait;
+//
+//    /**
+//     * IndexController constructor.
+//     * @param ObjectManager $objectManager
+//     */
+//    public function __construct(ObjectManager $objectManager)
+//    {
+//        $this->setObjectManager($objectManager);
+//    }
+//
+//    /**
+//     * @return ObjectRepository
+//     */
+//    protected function getRepository()
+//    {
+//        return $this->getObjectManager()
+//            ->getRepository(News::class);
+//    }
 
     /**
-     * IndexController constructor.
-     * @param ObjectManager $objectManager
-     */
-    public function __construct(ObjectManager $objectManager)
-    {
-        $this->setObjectManager($objectManager);
-    }
-
-    /**
-     * @return ObjectRepository
-     */
-    protected function getRepository()
-    {
-        return $this->getObjectManager()
-            ->getRepository(News::class);
-    }
-
-    /**
-     * @return ModelInterface
+     * @return mixed
      */
     public function indexAction()
     {
-        /** @var Paginator $paginator */
-        $paginator = $this->getRepository()->getPaginatorFromQuery(
-            $this->params()->fromQuery(), $this->params()->fromQuery('page', 1), 3
-        );
-
-        /** @var ModelInterface $viewModel */
-        $viewModel = parent::indexAction();
-        $viewModel->setVariable('paginator', $paginator);
-        return $viewModel;
-    }
-
-    /**
-     * @return ViewModel
-     */
-    public function viewAction()
-    {
-        /** @var EntityInterface $entity */
-        $entity = $this->getRepository()->findOneBy([
-            'id' => (int)$this->params()->fromRoute('id'),
-            'rowStatus' => true
-        ]);
-
-        if (!$entity) {
-            return $this->notFoundAction();
-        }
-
-        return new ViewModel([
-            'item' => $entity
+        return $this->forward()->dispatch(NewsController::class, [
+            'action' => 'index'
         ]);
     }
 }

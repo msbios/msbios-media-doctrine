@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "msbios/media-resource-doctrine",
-            "version": "v1.0.7",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-media-resource-doctrine.git",
-                "reference": "9443544b0da62016e71d1c2a4ab6bdfacf22bc2d"
+                "reference": "329b881dcdec98e1333aa419d8ffaf25ab390fb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/9443544b0da62016e71d1c2a4ab6bdfacf22bc2d",
-                "reference": "9443544b0da62016e71d1c2a4ab6bdfacf22bc2d",
+                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/329b881dcdec98e1333aa419d8ffaf25ab390fb4",
+                "reference": "329b881dcdec98e1333aa419d8ffaf25ab390fb4",
                 "shasum": ""
             },
             "require-dev": {
@@ -56,7 +56,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-06T09:32:44+00:00"
+            "time": "2018-03-12T13:27:02+00:00"
         }
     ],
     "packages-dev": [
@@ -1824,19 +1824,20 @@
         },
         {
             "name": "msbios/cpanel",
-            "version": "v1.0.20",
+            "version": "v1.0.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-cpanel.git",
-                "reference": "72c00a81df23f03348f70a700421c24d2fc41e6e"
+                "reference": "4308b0c9b022d01b5e454f090266223e9d21c777"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-cpanel/zipball/72c00a81df23f03348f70a700421c24d2fc41e6e",
-                "reference": "72c00a81df23f03348f70a700421c24d2fc41e6e",
+                "url": "https://api.github.com/repos/msbios/msbios-cpanel/zipball/4308b0c9b022d01b5e454f090266223e9d21c777",
+                "reference": "4308b0c9b022d01b5e454f090266223e9d21c777",
                 "shasum": ""
             },
             "require": {
+                "msbios/hydrator": "^1.0",
                 "msbios/view": "^1.0",
                 "zendframework/zend-mvc-plugin-flashmessenger": "^1.0",
                 "zendframework/zend-mvc-plugins": "^1.0"
@@ -1864,7 +1865,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -1877,30 +1878,33 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-12-07T10:25:31+00:00"
+            "time": "2018-03-12T11:26:45+00:00"
         },
         {
             "name": "msbios/cpanel-doctrine",
-            "version": "v1.0.18",
+            "version": "v1.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-cpanel-doctrine.git",
-                "reference": "5d15e26bcf6fdb36c1a95a8de9caf5e54a5cb51a"
+                "reference": "181ddd4e24db9f088b3c427892276309bdd21c63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-cpanel-doctrine/zipball/5d15e26bcf6fdb36c1a95a8de9caf5e54a5cb51a",
-                "reference": "5d15e26bcf6fdb36c1a95a8de9caf5e54a5cb51a",
+                "url": "https://api.github.com/repos/msbios/msbios-cpanel-doctrine/zipball/181ddd4e24db9f088b3c427892276309bdd21c63",
+                "reference": "181ddd4e24db9f088b3c427892276309bdd21c63",
                 "shasum": ""
             },
             "require-dev": {
                 "msbios/application": "^1.0",
+                "msbios/authentication": "^1.0",
                 "msbios/authentication-doctrine": "^1.0",
                 "msbios/cpanel": "^1.0",
                 "msbios/debug": "^1.0",
+                "msbios/doctrine": "^1.0",
                 "msbios/guard": "^1.0",
                 "msbios/guard-cpanel": "^1.0",
                 "msbios/guard-cpanel-doctrine": "^1.0",
+                "msbios/guard-doctrine": "^1.0",
                 "msbios/guard-resource": "^1.0",
                 "msbios/guard-resource-doctrine": "^1.0",
                 "msbios/resource": "^1.0",
@@ -1920,7 +1924,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -1933,7 +1937,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2017-11-26T19:18:35+00:00"
+            "time": "2018-03-07T14:45:25+00:00"
         },
         {
             "name": "msbios/db",
@@ -2039,22 +2043,22 @@
         },
         {
             "name": "msbios/doctrine",
-            "version": "v1.0.8",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-doctrine.git",
-                "reference": "a20b9a719c7321f064d06499788e1c180ab281d5"
+                "reference": "717ac05ebb18fcd3b611077b31f7bcb4a775e544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-doctrine/zipball/a20b9a719c7321f064d06499788e1c180ab281d5",
-                "reference": "a20b9a719c7321f064d06499788e1c180ab281d5",
+                "url": "https://api.github.com/repos/msbios/msbios-doctrine/zipball/717ac05ebb18fcd3b611077b31f7bcb4a775e544",
+                "reference": "717ac05ebb18fcd3b611077b31f7bcb4a775e544",
                 "shasum": ""
             },
             "require": {
                 "doctrine/doctrine-orm-module": "^1.1",
+                "msbios/form": "^1.0",
                 "msbios/json": "^1.0",
-                "msbios/msbios": "^1.0",
                 "msbios/stdlib": "^1.0"
             },
             "require-dev": {
@@ -2088,7 +2092,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-01T13:04:14+00:00"
+            "time": "2018-03-12T12:13:46+00:00"
         },
         {
             "name": "msbios/form",
@@ -2506,6 +2510,56 @@
             "time": "2018-03-03T10:34:00+00:00"
         },
         {
+            "name": "msbios/hydrator",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/msbios/msbios-hydrator.git",
+                "reference": "ed10f6043efc4df2a50c48d0c7915bb2d1b8f3d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/msbios/msbios-hydrator/zipball/ed10f6043efc4df2a50c48d0c7915bb2d1b8f3d4",
+                "reference": "ed10f6043efc4df2a50c48d0c7915bb2d1b8f3d4",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zend-hydrator": "^2.3"
+            },
+            "require-dev": {
+                "msbios/application": "^1.0",
+                "msbios/debug": "^1.0",
+                "msbios/test": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "zf": {
+                    "component": "MSBios\\Hydrator"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MSBios\\Hydrator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Judzhin Miles",
+                    "email": "info@msbios.com"
+                }
+            ],
+            "description": "MSBios Hydrator",
+            "homepage": "https://github.com/msbios/msbios-hydrator",
+            "keywords": [
+                "php"
+            ],
+            "time": "2018-03-07T11:08:59+00:00"
+        },
+        {
             "name": "msbios/i18n",
             "version": "v1.0.7",
             "source": {
@@ -2666,16 +2720,16 @@
         },
         {
             "name": "msbios/msbios",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-msbios.git",
-                "reference": "1611733d94fd9e05a852207296ea5595b66f2ab3"
+                "reference": "3db910564d610ee2a0a737cbc94089bc933ef759"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-msbios/zipball/1611733d94fd9e05a852207296ea5595b66f2ab3",
-                "reference": "1611733d94fd9e05a852207296ea5595b66f2ab3",
+                "url": "https://api.github.com/repos/msbios/msbios-msbios/zipball/3db910564d610ee2a0a737cbc94089bc933ef759",
+                "reference": "3db910564d610ee2a0a737cbc94089bc933ef759",
                 "shasum": ""
             },
             "require": {
@@ -2709,7 +2763,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-02-27T08:36:56+00:00"
+            "time": "2018-03-07T10:56:01+00:00"
         },
         {
             "name": "msbios/navigation",
@@ -2820,16 +2874,16 @@
         },
         {
             "name": "msbios/portal-doctrine",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-portal-doctrine.git",
-                "reference": "5b0c826703a1fa4ba6e1b8aa6b3a733a08ed7be3"
+                "reference": "b9fc6b60a8273b69a352ea928f7dfaf215d79e09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-portal-doctrine/zipball/5b0c826703a1fa4ba6e1b8aa6b3a733a08ed7be3",
-                "reference": "5b0c826703a1fa4ba6e1b8aa6b3a733a08ed7be3",
+                "url": "https://api.github.com/repos/msbios/msbios-portal-doctrine/zipball/b9fc6b60a8273b69a352ea928f7dfaf215d79e09",
+                "reference": "b9fc6b60a8273b69a352ea928f7dfaf215d79e09",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2926,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-02-28T15:03:36+00:00"
+            "time": "2018-03-07T14:24:11+00:00"
         },
         {
             "name": "msbios/resource",

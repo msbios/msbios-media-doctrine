@@ -7,24 +7,24 @@ namespace MSBios\Media\Doctrine\Factory;
 
 use Doctrine\ORM\EntityManager;
 use Interop\Container\ContainerInterface;
-use MSBios\Media\Doctrine\Controller\IndexController;
+use MSBios\Media\Doctrine\Controller\NewsController;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
- * Class IndexControllerFactory
+ * Class NewsControllerFactory
  * @package MSBios\Media\Doctrine\Factory
  */
-class IndexControllerFactory implements FactoryInterface
+class NewsControllerFactory implements FactoryInterface
 {
     /**
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return IndexController
+     * @return NewsController
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new IndexController(
+        return new NewsController(
             $container->get(EntityManager::class)
         );
     }

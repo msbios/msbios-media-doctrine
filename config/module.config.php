@@ -17,12 +17,12 @@ return [
                 'may_terminate' => true,
                 'child_routes' => [
 
-                    'media' => [
+                    'news' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => 'news[/]',
                             'defaults' => [
-                                'controller' => Controller\IndexController::class,
+                                'controller' => Controller\NewsController::class,
                                 'action' => 'index'
                             ],
                         ],
@@ -64,8 +64,8 @@ return [
 
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class =>
-                Factory\IndexControllerFactory::class,
+            Controller\NewsController::class =>
+                Factory\NewsControllerFactory::class,
             V1\Rest\News\NewsResource::class =>
                 Factory\NewsResourceFactory::class
         ]

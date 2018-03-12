@@ -21,7 +21,7 @@ namespace MSbios\Media\Doctrine;
             <?php foreach ($this->paginator as $item): ?>
                 <div class="media-post">
                     <h2 class="blog-post-title">
-                        <a href="<?= $this->url('home/media/view', ['id' => $item->getId(), 'slug' => $item->getSlug()]); ?>">
+                        <a href="<?= $this->url('home/news/view', ['id' => $item->getId(), 'slug' => $item->getSlug()]); ?>">
                             <?= $item->getTitle(); ?>
                         </a>
                     </h2>
