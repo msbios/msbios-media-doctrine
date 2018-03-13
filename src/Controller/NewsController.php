@@ -12,6 +12,7 @@ use MSBios\Application\Controller\IndexController as DefaultIndexController;
 use MSBios\Doctrine\DBAL\Types\PublishingStateType;
 use MSBios\Doctrine\ObjectManagerAwareTrait;
 use MSBios\Form\FormElementManagerAwareTrait;
+use MSBios\Media\Doctrine\Form\NewsForm;
 use MSBios\Media\Resource\Doctrine\Entity\News;
 use MSBios\Resource\Doctrine\EntityInterface;
 use Zend\Form\FormInterface;
@@ -56,7 +57,7 @@ class NewsController extends DefaultIndexController
     {
         /** @var FormInterface $form */
         $form = $this->getFormElementManager()
-            ->get(get_called_class());
+            ->get(NewsForm::class);
 
         /** @var Paginator $paginator */
         $paginator = $this->getRepository()->getPaginatorFromQuery(

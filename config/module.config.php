@@ -77,10 +77,6 @@ return [
         'factories' => [
             Form\NewsForm::class =>
                 InvokableFactory::class
-        ],
-        'aliases' => [
-            Controller\NewsController::class =>
-                Form\NewsForm::class
         ]
     ],
 
