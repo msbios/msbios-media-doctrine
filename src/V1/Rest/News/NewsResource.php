@@ -64,7 +64,9 @@ class NewsResource extends AbstractRestfulController
 
         /** @var Paginator $paginator */
         $paginator = $repository->getPaginatorFromQuery(
-            $this->params()->fromQuery(), $this->params()->fromQuery('page', 1), 3
+            $this->params()->fromQuery(),
+            $this->params()->fromQuery('page', 1),
+            3
         );
 
         /** @var HydratorInterface $hydrator */
@@ -84,5 +86,4 @@ class NewsResource extends AbstractRestfulController
             'total' => $paginator->count()
         ]);
     }
-
 }

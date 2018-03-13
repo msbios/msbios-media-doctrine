@@ -11,9 +11,12 @@ use Doctrine\Common\Persistence\ObjectRepository;
 use MSBios\Application\Controller\IndexController as DefaultIndexController;
 use MSBios\Doctrine\DBAL\Types\PublishingStateType;
 use MSBios\Doctrine\ObjectManagerAwareTrait;
+use MSBios\Form\FormElementManagerAwareTrait;
 use MSBios\Media\Resource\Doctrine\Entity\News;
 use MSBios\Resource\Doctrine\EntityInterface;
+use Zend\Form\FormInterface;
 use Zend\Paginator\Paginator;
+use Zend\ServiceManager\PluginManagerInterface;
 use Zend\View\Model\ModelInterface;
 use Zend\View\Model\ViewModel;
 
@@ -23,14 +26,17 @@ use Zend\View\Model\ViewModel;
  */
 class NewsController extends DefaultIndexController
 {
+    use FormElementManagerAwareTrait;
     use ObjectManagerAwareTrait;
 
     /**
-     * IndexController constructor.
+     * NewsController constructor.
+     * @param PluginManagerInterface $formElementManager
      * @param ObjectManager $objectManager
      */
-    public function __construct(ObjectManager $objectManager)
+    public function __construct(PluginManagerInterface $formElementManager, ObjectManager $objectManager)
     {
+        $this->setFormElementManager($formElementManager);
         $this->setObjectManager($objectManager);
     }
 
@@ -48,13 +54,20 @@ class NewsController extends DefaultIndexController
      */
     public function indexAction()
     {
+        /** @var FormInterface $form */
+        $form = $this->getFormElementManager()
+            ->get(get_called_class());
+
         /** @var Paginator $paginator */
         $paginator = $this->getRepository()->getPaginatorFromQuery(
-            $this->params()->fromQuery(), $this->params()->fromQuery('page', 1), 3
+            $this->params()->fromQuery(),
+            $this->params()->fromQuery('page', 1),
+            3
         );
 
         /** @var ModelInterface $viewModel */
         $viewModel = parent::indexAction();
+        $viewModel->setVariable('search', $form);
         $viewModel->setVariable('paginator', $paginator);
         return $viewModel;
     }
@@ -68,12 +81,13 @@ class NewsController extends DefaultIndexController
         $entity = $this->getRepository()->findOneBy([
             'id' => (int)$this->params()->fromRoute('id'),
             'state' => $this->params()->fromQuery(
-                'state', PublishingStateType::PUBLISHING_STATE_PUBLISHED
+                'state',
+                PublishingStateType::PUBLISHING_STATE_PUBLISHED
             ),
             'rowStatus' => true
         ]);
 
-        if (!$entity) {
+        if (! $entity) {
             return $this->notFoundAction();
         }
 

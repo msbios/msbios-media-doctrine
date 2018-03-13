@@ -5,16 +5,29 @@
  */
 
 namespace MSbios\Media\Doctrine;
+
+/** @var \Zend\Form\Form $form */
+$form = $this->search;
+$form->prepare();
+$form->setAttribute('class', 'row');
 ?>
 
-<h1><?= __NAMESPACE__; ?></h1>
+    <h1><?= __NAMESPACE__; ?></h1>
 
-<form method="get" class="row">
+<?= $this->form()->openTag($form->setAttributes([
+    'class' => 'row',
+    'role' => 'form'
+])); ?>
 
     <div class="col-sm-8 media-main">
 
         <div class="form-group">
-            <input type="search" class="form-control" name="title" placeholder="Start typing the news title (at least 3 characters)">
+
+            <?= $this->formElement($form->get('title')->setAttributes([
+                'class' => 'form-control',
+                'placeholder' => 'Start typing the news title (at least 3 characters)'
+            ])); ?>
+
         </div>
 
         <?php if ($this->paginator->count()): ?>
@@ -25,7 +38,14 @@ namespace MSbios\Media\Doctrine;
                             <?= $item->getTitle(); ?>
                         </a>
                     </h2>
-                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+                    <p class="blog-post-meta">
+                        <?= $this->dateFormat(
+                            $item->getPostdate(),
+                            \IntlDateFormatter::MEDIUM,
+                            \IntlDateFormatter::SHORT);
+                        ?>
+                        <a href="#"><?= $item->getCreator()->getUsername(); ?></a>
+                    </p>
 
                     <?= $item->getContent(); ?>
 
@@ -50,13 +70,25 @@ namespace MSbios\Media\Doctrine;
 
         <div class="sidebar-module sidebar-module-inset">
             <h4>Registration date</h4>
+
+            <?php $postdate = $form->get('postdate'); ?>
+
             <div class="form-group">
                 <label for="date-from" class="control-label">Date from</label>
-                <input type="date" class="form-control" id="date-from" name="postdate[from]" placeholder="Date from">
+                <?= $this->formElement($postdate->get('from')->setAttributes([
+                    'id' => 'date-from',
+                    'class' => 'form-control',
+                    'placeholder' => 'Date from'
+                ])); ?>
+
             </div>
             <div class="form-group">
                 <label for="date-to" class="control-label">Date to</label>
-                <input type="date" class="form-control" id="date-to" name="postdate[to]" placeholder="Date to">
+                <?= $this->formElement($postdate->get('to')->setAttributes([
+                    'id' => 'date-to',
+                    'class' => 'form-control',
+                    'placeholder' => 'Date to'
+                ])); ?>
             </div>
         </div>
 
@@ -92,4 +124,4 @@ namespace MSbios\Media\Doctrine;
         </div>
     </div><!-- /.blog-sidebar -->
 
-</form>
+<?= $this->form()->closeTag($form); ?>

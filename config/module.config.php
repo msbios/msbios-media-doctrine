@@ -6,8 +6,10 @@
 
 namespace MSBios\Media\Doctrine;
 
+use MSBios\Media\Doctrine\Form\NewsForm;
 use Zend\Router\Http\Regex;
 use Zend\Router\Http\Segment;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
 
@@ -68,6 +70,17 @@ return [
                 Factory\NewsControllerFactory::class,
             V1\Rest\News\NewsResource::class =>
                 Factory\NewsResourceFactory::class
+        ]
+    ],
+
+    'form_elements' => [
+        'factories' => [
+            Form\NewsForm::class =>
+                InvokableFactory::class
+        ],
+        'aliases' => [
+            Controller\NewsController::class =>
+                Form\NewsForm::class
         ]
     ],
 
