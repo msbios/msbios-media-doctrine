@@ -66,7 +66,7 @@ class NewsController extends DefaultIndexController
         $paginator = $this->getRepository()->getPaginatorFromQuery(
             $this->params()->fromQuery(),
             $this->params()->fromQuery('page', 1),
-            $this->params()->fromQuery('limit', self::DEFAULT_ITEM_COUNT_PER_PAGE)
+            $this->params()->fromQuery('limit', static::DEFAULT_ITEM_COUNT_PER_PAGE)
         );
 
         /** @var ModelInterface $viewModel */

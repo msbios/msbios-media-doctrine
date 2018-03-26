@@ -74,7 +74,7 @@ class NewsResource extends AbstractRestfulController
         $paginator = $repository->getPaginatorFromQuery(
             $this->params()->fromQuery(),
             $this->params()->fromQuery('page', 1),
-            $this->params()->fromQuery('limit', self::ITEM_COUNT_PER_PAGE)
+            $this->params()->fromQuery('limit', static::ITEM_COUNT_PER_PAGE)
         );
 
         /** @var array $items */
