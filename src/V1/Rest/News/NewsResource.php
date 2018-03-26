@@ -11,7 +11,6 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use MSBios\Doctrine\ObjectManagerAwareTrait;
 use MSBios\Media\Doctrine\Controller\NewsController;
 use MSBios\Media\Resource\Doctrine\Entity\News;
-use MSBios\Media\Resource\Doctrine\Repository\NewsRepository;
 use MSBios\Resource\Doctrine\EntityInterface;
 use Zend\Hydrator\HydratorInterface;
 use Zend\Mvc\Controller\AbstractRestfulController;
@@ -26,34 +25,42 @@ class NewsResource extends AbstractRestfulController
 {
     use ObjectManagerAwareTrait;
 
+    /** @var HydratorInterface */
+    protected $hydrator;
+
+    /** @const ITEM_COUNT_PER_PAGE */
+    const ITEM_COUNT_PER_PAGE = NewsController::DEFAULT_ITEM_COUNT_PER_PAGE;
+
     /**
      * NewsResource constructor.
-     * @param NewsRepository $repository
+     * @param ObjectManager $dem
      */
     public function __construct(ObjectManager $dem)
     {
         $this->setObjectManager($dem);
+
+        /** @var HydratorInterface $hydrator */
+        $this->hydrator = new DoctrineObject($dem);
     }
 
     /**
      * @param mixed $id
-     * @return mixed
+     * @return JsonModel
      */
     public function get($id)
     {
-        /** @var ObjectManager $dem */
-        $dem = $this->getObjectManager();
         /** @var EntityInterface $item */
-        $item = $dem->find(News::class, $id);
+        $item = $this->getObjectManager()
+            ->find(News::class, $id);
 
         return new JsonModel([
             'success' => true,
-            'item' => (new DoctrineObject($dem))->extract($item)
+            'item' => $this->hydrator->extract($item)
         ]);
     }
 
     /**
-     * @return mixed
+     * @return JsonModel
      */
     public function getList()
     {
@@ -67,18 +74,15 @@ class NewsResource extends AbstractRestfulController
         $paginator = $repository->getPaginatorFromQuery(
             $this->params()->fromQuery(),
             $this->params()->fromQuery('page', 1),
-            $this->params()->fromQuery('limit', NewsController::DEFAULT_ITEM_COUNT_PER_PAGE)
+            $this->params()->fromQuery('limit', self::ITEM_COUNT_PER_PAGE)
         );
-
-        /** @var HydratorInterface $hydrator */
-        $hydrator = new DoctrineObject($dem);
 
         /** @var array $items */
         $items = [];
 
-        /** @var News $item */
+        /** @var EntityInterface $item */
         foreach ($paginator as $item) {
-            $items[] = $hydrator->extract($item);
+            $items[] = $this->hydrator->extract($item);
         }
 
         return new JsonModel([
