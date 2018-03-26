@@ -9,6 +9,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject;
 use MSBios\Doctrine\ObjectManagerAwareTrait;
+use MSBios\Media\Doctrine\Controller\NewsController;
 use MSBios\Media\Resource\Doctrine\Entity\News;
 use MSBios\Media\Resource\Doctrine\Repository\NewsRepository;
 use MSBios\Resource\Doctrine\EntityInterface;
@@ -66,7 +67,7 @@ class NewsResource extends AbstractRestfulController
         $paginator = $repository->getPaginatorFromQuery(
             $this->params()->fromQuery(),
             $this->params()->fromQuery('page', 1),
-            3
+            $this->params()->fromQuery('limit', NewsController::DEFAULT_ITEM_COUNT_PER_PAGE)
         );
 
         /** @var HydratorInterface $hydrator */
@@ -83,7 +84,7 @@ class NewsResource extends AbstractRestfulController
         return new JsonModel([
             'success' => true,
             'items' => $items,
-            'total' => $paginator->count()
+            'total' => $paginator->getTotalItemCount()
         ]);
     }
 }
