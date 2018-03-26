@@ -6,7 +6,6 @@
 
 namespace MSBios\Media\Doctrine;
 
-use MSBios\Media\Doctrine\Form\NewsForm;
 use Zend\Router\Http\Regex;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;

@@ -30,6 +30,9 @@ class NewsController extends DefaultIndexController
     use FormElementManagerAwareTrait;
     use ObjectManagerAwareTrait;
 
+    /** @const DEFAULT_ITEM_COUNT_PER_PAGE */
+    const DEFAULT_ITEM_COUNT_PER_PAGE = 3;
+
     /**
      * NewsController constructor.
      * @param PluginManagerInterface $formElementManager
@@ -63,7 +66,7 @@ class NewsController extends DefaultIndexController
         $paginator = $this->getRepository()->getPaginatorFromQuery(
             $this->params()->fromQuery(),
             $this->params()->fromQuery('page', 1),
-            3
+            self::DEFAULT_ITEM_COUNT_PER_PAGE
         );
 
         /** @var ModelInterface $viewModel */
