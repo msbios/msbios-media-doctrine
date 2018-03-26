@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "msbios/media-resource-doctrine",
-            "version": "v1.0.15",
+            "version": "v1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-media-resource-doctrine.git",
-                "reference": "37d2db10914747842f0a19c91a24273feef15017"
+                "reference": "218e60b46b4e6fac1ec051da589ea0d1c6f03506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/37d2db10914747842f0a19c91a24273feef15017",
-                "reference": "37d2db10914747842f0a19c91a24273feef15017",
+                "url": "https://api.github.com/repos/msbios/msbios-media-resource-doctrine/zipball/218e60b46b4e6fac1ec051da589ea0d1c6f03506",
+                "reference": "218e60b46b4e6fac1ec051da589ea0d1c6f03506",
                 "shasum": ""
             },
             "require-dev": {
@@ -56,7 +56,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-16T12:52:26+00:00"
+            "time": "2018-03-26T13:05:36+00:00"
         }
     ],
     "packages-dev": [
