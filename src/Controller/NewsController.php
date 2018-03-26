@@ -71,8 +71,11 @@ class NewsController extends DefaultIndexController
 
         /** @var ModelInterface $viewModel */
         $viewModel = parent::indexAction();
-        $viewModel->setVariable('search', $form);
-        $viewModel->setVariable('paginator', $paginator);
+        $viewModel->setVariables([
+            'search' => $form,
+            'paginator' => $paginator
+        ]);
+
         return $viewModel;
     }
 
