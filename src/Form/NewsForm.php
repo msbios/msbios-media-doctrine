@@ -3,15 +3,17 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Media\Doctrine\Form;
 
 use Zend\Form\Element\Date;
-use Zend\Form\Element\DateTime;
 use Zend\Form\Element\Search;
-use Zend\Form\Element\Text;
 use Zend\Form\Fieldset;
 use Zend\Form\Form;
 use Zend\Http\Request;
+use Zend\InputFilter\Factory;
+use Zend\InputFilter\InputFilter;
+use Zend\InputFilter\InputFilterInterface;
 
 /**
  * Class NewsForm
@@ -53,5 +55,26 @@ class NewsForm extends Form
                 ]
             ]
         ]);
+
+        /** @var InputFilterInterface $factory */
+        $inputFilter = (new Factory)->createInputFilter([
+            [
+                'name' => 'title',
+                'required' => false,
+            ], [
+                'type' => InputFilter::class,
+                'name' => 'postdate',
+                [
+                    'name' => 'from',
+                    'required' => false,
+                ], [
+                    'name' => 'to',
+                    'required' => false,
+                ]
+            ]
+        ]);
+
+        $this->setInputFilter($inputFilter);
+
     }
 }

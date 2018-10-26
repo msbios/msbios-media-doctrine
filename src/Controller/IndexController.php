@@ -6,15 +6,7 @@
 
 namespace MSBios\Media\Doctrine\Controller;
 
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
 use MSBios\Application\Controller\IndexController as DefaultIndexController;
-use MSBios\Doctrine\ObjectManagerAwareTrait;
-use MSBios\Media\Resource\Doctrine\Entity\News;
-use MSBios\Resource\Doctrine\EntityInterface;
-use Zend\Paginator\Paginator;
-use Zend\View\Model\ModelInterface;
-use Zend\View\Model\ViewModel;
 
 /**
  * Class IndexController
@@ -22,26 +14,6 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends DefaultIndexController
 {
-//    use ObjectManagerAwareTrait;
-//
-//    /**
-//     * IndexController constructor.
-//     * @param ObjectManager $objectManager
-//     */
-//    public function __construct(ObjectManager $objectManager)
-//    {
-//        $this->setObjectManager($objectManager);
-//    }
-//
-//    /**
-//     * @return ObjectRepository
-//     */
-//    protected function getRepository()
-//    {
-//        return $this->getObjectManager()
-//            ->getRepository(News::class);
-//    }
-
     /**
      * @return mixed
      */
