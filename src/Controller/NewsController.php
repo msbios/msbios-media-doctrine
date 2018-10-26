@@ -104,7 +104,7 @@ class NewsController extends DefaultIndexController
 
         $paginator
             ->setCurrentPageNumber($this->params()->fromQuery('page', 1))
-            ->setItemCountPerPage(self::DEFAULT_ITEM_COUNT_PER_PAGE);
+            ->setItemCountPerPage(static::DEFAULT_ITEM_COUNT_PER_PAGE);
 
         /** @var ModelInterface $viewModel */
         $viewModel = parent::indexAction();
