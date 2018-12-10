@@ -6,6 +6,11 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'MSBios\Media\CPanel\Doctrine',
+        'MSBios\InputFilter',
+        'MSBios\Filter',
+        'MSBios\Imagine',
+        'Zend\Log',
         'MSBios\Paginator\Doctrine',
         'MSBios\Validator',
         'MSBios\Cache',

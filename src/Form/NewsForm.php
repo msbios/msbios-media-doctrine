@@ -75,6 +75,5 @@ class NewsForm extends Form
         ]);
 
         $this->setInputFilter($inputFilter);
-
     }
 }

@@ -28,6 +28,7 @@
   },
   "require-dev": {
     "msbios/portal-doctrine": "^1.0",
+    "msbios/media-cpanel-doctrine": "^1.0",
     "msbios/debug": "^1.0",
     "msbios/test": "^1.0"
   },

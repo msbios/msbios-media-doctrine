@@ -47,28 +47,32 @@ return [
                     ],
                 ],
             ],
-            'media.rest.news' => [
+            'media.rpc.news' => [
                 'type' => Segment::class,
                 'options' => [
-                    'route' => '/api/news[/:id][.:format]',
+                    'route' => '/news.:format',
                     'defaults' => [
-                        'controller' => V1\Rest\News\NewsResource::class,
+                        'controller' => V1\Rpc\News\NewsController::class,
+                        'action' => 'news'
                     ],
                     'constraints' => [
-                        'id' => '[0-9]+',
-                        'format' => '(json)?',
+                        'format' => '(json|xml)?',
                     ]
                 ],
             ],
+
         ],
     ],
 
     'controllers' => [
         'factories' => [
+            // MVC
             Controller\NewsController::class =>
                 Factory\NewsControllerFactory::class,
-            V1\Rest\News\NewsResource::class =>
-                Factory\NewsResourceFactory::class
+
+            // Rpc
+            V1\Rpc\News\NewsController::class =>
+                V1\Rpc\News\NewsControllerFactory::class
         ]
     ],
 
@@ -77,11 +81,5 @@ return [
             Form\NewsForm::class =>
                 InvokableFactory::class
         ]
-    ],
-
-    'view_manager' => [
-        'strategies' => [
-            'ViewJsonStrategy',
-        ],
     ],
 ];

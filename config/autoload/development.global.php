@@ -24,13 +24,9 @@ return [
     ],
 
     'controllers' => [
-        'factories' => [
-            Controller\IndexController::class =>
-                InvokableFactory::class,
-        ],
         'aliases' => [
             \MSBios\Application\Controller\IndexController::class =>
-                Controller\IndexController::class
+                Controller\NewsController::class
         ]
     ],
 
@@ -85,6 +81,9 @@ return [
     'view_manager' => [
         'template_path_stack' => [
             __DIR__ . '/../../view',
+        ],
+        'strategies' => [
+            'ViewJsonStrategy',
         ],
     ],
 ];

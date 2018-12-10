@@ -20,13 +20,13 @@ class NewsControllerFactory implements FactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return NewsController
+     * @return NewsController|object
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         return new NewsController(
-            $container->get('FormElementManager'),
-            $container->get(EntityManager::class)
+            $container->get(EntityManager::class),
+            $container->get('FormElementManager')
         );
     }
 }
