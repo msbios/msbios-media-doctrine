@@ -21,12 +21,12 @@ class Module implements
     AutoloaderAwareInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.14';
+    const VERSION = '1.0.15';
 
     /**
-     * Returns configuration to merge with application configuration
+     * @inheritdoc
      *
-     * @return array|\Traversable
+     * @return array|mixed|\Traversable
      */
     public function getConfig()
     {
@@ -34,7 +34,7 @@ class Module implements
     }
 
     /**
-     * Return an array for passing to Zend\Loader\AutoloaderFactory.
+     * @inheritdoc
      *
      * @return array
      */
