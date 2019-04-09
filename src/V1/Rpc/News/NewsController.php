@@ -16,7 +16,6 @@ use MSBios\Doctrine\DBAL\Types\PublishingStateType;
 use MSBios\Media\Doctrine\Form\NewsForm;
 use MSBios\Media\Resource\Doctrine\Entity\News;
 use MSBios\Paginator\Doctrine\Adapter\QueryBuilderPaginator;
-use Zend\Hydrator\HydratorInterface;
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Zend\Paginator\Paginator;
 use Zend\View\Model\JsonModel;
@@ -85,6 +84,10 @@ class NewsController extends AbstractRestfulController implements ObjectManagerA
             'news' => $news,
             'item_count' => $paginator->getTotalItemCount(),
             'total' => $repository->count([
+                'state' => $this->params()->fromQuery(
+                    'state',
+                    PublishingStateType::PUBLISHING_STATE_PUBLISHED
+                ),
                 'rowStatus' => true
             ])
         ]);
