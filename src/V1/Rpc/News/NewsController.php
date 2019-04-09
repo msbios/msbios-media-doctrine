@@ -83,6 +83,7 @@ class NewsController extends AbstractRestfulController implements ObjectManagerA
 
         return new JsonModel([
             'news' => $news,
+            'item_count' => $paginator->getTotalItemCount(),
             'total' => $repository->count([
                 'rowStatus' => true
             ])
