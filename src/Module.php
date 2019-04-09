@@ -12,7 +12,7 @@ namespace MSBios\Media\Doctrine;
 class Module extends \MSBios\Module
 {
     /** @const VERSION */
-    const VERSION = '1.0.16';
+    const VERSION = '1.0.17';
 
     /**
      * @inheritdoc
