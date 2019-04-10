@@ -54,20 +54,19 @@ class NewsController extends AbstractRestfulController implements ObjectManagerA
         /** @var ObjectRepository $repository */
         $repository = $dem->getRepository(News::class);
 
-        /** @var NewsForm $search */
-        $search = $this->form;
-        $search->setData($this->params()->fromQuery());
+        $this->form
+            ->setData($this->params()->fromQuery());
 
         /**
          * @param QueryBuilder $qb
          * @return QueryBuilderPaginator
          */
-        $fetchBy = self::factorySearch($search);
+        $fetchBy = self::factorySearch($this->form);
 
         /** @var Paginator $paginator */
         $paginator = $repository->fetchAll($fetchBy)
             ->setPageRange(4)
-            ->setItemCountPerPage(self::ITEM_COUNT_PER_PAGE)
+            ->setItemCountPerPage($this->params()->fromQuery('limit', self::ITEM_COUNT_PER_PAGE))
             ->setCurrentPageNumber($this->params()->fromQuery('page', 1));
 
         /** @var News[] $news */
