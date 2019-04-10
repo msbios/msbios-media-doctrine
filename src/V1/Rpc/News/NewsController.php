@@ -130,15 +130,15 @@ class NewsController extends AbstractRestfulController implements ObjectManagerA
                         ->setParameter('now', new \DateTime('now'), Type::DATETIME);
                 }
 
-                if (! empty($params['sort'])) {
-                    $order = explode(' ', $params['sort']);
+                if (! empty($values['sort'])) {
+                    $order = explode(' ', $values['sort']);
                     $qb->orderBy("n.$order[0]", $order[1]);
                 } else {
                     $qb->orderBy("n.postdate", 'DESC');
                 }
             }
 
-            return new QueryBuilderPaginator($qb, [], ['n.postdate' => 'DESC']);
+            return new QueryBuilderPaginator($qb, []);
         };
     }
 }
