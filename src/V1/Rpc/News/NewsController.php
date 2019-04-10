@@ -129,6 +129,13 @@ class NewsController extends AbstractRestfulController implements ObjectManagerA
                     $qb->andWhere('n.postdate < :now')
                         ->setParameter('now', new \DateTime('now'), Type::DATETIME);
                 }
+
+                if (! empty($params['sort'])) {
+                    $order = explode(' ', $params['sort']);
+                    $qb->orderBy("n.$order[0]", $order[1]);
+                } else {
+                    $qb->orderBy("n.postdate", 'DESC');
+                }
             }
 
             return new QueryBuilderPaginator($qb, [], ['n.postdate' => 'DESC']);
