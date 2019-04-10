@@ -6,8 +6,7 @@
 
 namespace MSBios\Media\Doctrine\Form;
 
-use Zend\Form\Element\Date;
-use Zend\Form\Element\Search;
+use Zend\Form\Element;
 use Zend\Form\Fieldset;
 use Zend\Form\Form;
 use Zend\Http\Request;
@@ -30,7 +29,7 @@ class NewsForm extends Form
 
         $this->setAttribute('method', Request::METHOD_GET);
         $this->add([
-            'type' => Search::class,
+            'type' => Element\Search::class,
             'name' => 'title'
         ])->add([
             'type' => Fieldset::class,
@@ -38,7 +37,7 @@ class NewsForm extends Form
             'elements' => [
                 [
                     'spec' => [
-                        'type' => Date::class,
+                        'type' => Element\Date::class,
                         'name' => 'from',
                         'options' => [
                             'format' => 'Y-m-d'
@@ -46,7 +45,7 @@ class NewsForm extends Form
                     ]
                 ], [
                     'spec' => [
-                        'type' => Date::class,
+                        'type' => Element\Date::class,
                         'name' => 'to',
                         'options' => [
                             'format' => 'Y-m-d'
@@ -54,6 +53,17 @@ class NewsForm extends Form
                     ]
                 ]
             ]
+        ])->add([
+            'type' => Element\Select::class,
+            'name' => 'sort',
+            'options' => [
+                'value_options' => [
+                    'postdate ASC' => _('Postdate A-Z'),
+                    'postdate DESC' => _('Postdate Z-A'),
+                    'views ASC' => _('Popularity ↓'),
+                    'views DESC' => _('Popularity ↑'),
+                ],
+            ],
         ]);
 
         /** @var InputFilterInterface $factory */
@@ -71,6 +81,9 @@ class NewsForm extends Form
                     'name' => 'to',
                     'required' => false,
                 ]
+            ], [
+                'name' => 'sort',
+                'required' => false
             ]
         ]);
 
